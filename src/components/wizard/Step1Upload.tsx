@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Upload, X, ImageIcon, AlertCircle } from 'lucide-react';
+import { Upload, X, ImageIcon, AlertCircle, Video } from 'lucide-react';
 import { PhotoFile } from '../../types';
 import { extractPhotoMetadata } from '../../utils/exif';
 
@@ -27,7 +27,7 @@ export default function Step1Upload({ photos, onPhotosChange, onNext }: Step1Upl
     setIsDragging(false);
 
     const files = Array.from(e.dataTransfer.files).filter(file =>
-      file.type.startsWith('image/')
+      file.type.startsWith('image/') || file.type.startsWith('video/')
     );
 
     await processFiles(files);
@@ -43,12 +43,15 @@ export default function Step1Upload({ photos, onPhotosChange, onNext }: Step1Upl
   const processFiles = async (files: File[]) => {
     const newPhotos: PhotoFile[] = await Promise.all(
       files.map(async (file) => {
-        const metadata = await extractPhotoMetadata(file);
+        const mediaType = file.type.startsWith('video/') ? 'video' : 'image';
+        const metadata = mediaType === 'image' ? await extractPhotoMetadata(file) : {};
         return {
           id: Math.random().toString(36).substr(2, 9),
           file,
           preview: URL.createObjectURL(file),
-          metadata
+          metadata,
+          mediaType,
+          mimeType: file.type
         };
       })
     );
@@ -63,9 +66,9 @@ export default function Step1Upload({ photos, onPhotosChange, onNext }: Step1Upl
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Upload Your Photos</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Upload Your Photos & Videos</h2>
         <p className="text-gray-600">
-          Add photos of the historical site you visited. The more angles, the better the reconstruction.
+          Add photos and videos of the historical site you visited. The more angles, the better the reconstruction.
         </p>
       </div>
 
@@ -74,13 +77,13 @@ export default function Step1Upload({ photos, onPhotosChange, onNext }: Step1Upl
         <div className="flex items-start space-x-3">
           <AlertCircle className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
           <div>
-            <h3 className="font-semibold text-blue-900 mb-2">Photo Tips for Best Results</h3>
+            <h3 className="font-semibold text-blue-900 mb-2">Capture Tips for Best Results</h3>
             <ul className="text-sm text-blue-800 space-y-1">
-              <li>• Take 30-80 photos from different angles</li>
+              <li>• Take 30-80 photos or short videos from different angles</li>
               <li>• Walk around the subject in a circle</li>
-              <li>• Avoid blurry or low-light shots</li>
+              <li>• Avoid blurry or low-light captures</li>
               <li>• Include overlapping views of the same features</li>
-              <li>• Supported formats: JPG, PNG, HEIC</li>
+              <li>• Images: JPG, PNG, HEIC • Videos: MP4, MOV, WEBM</li>
             </ul>
           </div>
         </div>
@@ -99,10 +102,10 @@ export default function Step1Upload({ photos, onPhotosChange, onNext }: Step1Upl
       >
         <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
         <p className="text-lg font-medium text-gray-900 mb-2">
-          Drop photos here or click to browse
+          Drop photos or videos here or click to browse
         </p>
         <p className="text-sm text-gray-500 mb-4">
-          JPG, PNG, or HEIC files
+          Images (JPG, PNG, HEIC) or Videos (MP4, MOV, WEBM)
         </p>
         <button
           onClick={() => fileInputRef.current?.click()}
@@ -114,7 +117,7 @@ export default function Step1Upload({ photos, onPhotosChange, onNext }: Step1Upl
           ref={fileInputRef}
           type="file"
           multiple
-          accept="image/*"
+          accept="image/*,video/*"
           onChange={handleFileSelect}
           className="hidden"
         />
@@ -125,7 +128,7 @@ export default function Step1Upload({ photos, onPhotosChange, onNext }: Step1Upl
         <div className="mt-8">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold text-gray-900">
-              Uploaded Photos ({photos.length})
+              Uploaded Media ({photos.length})
             </h3>
             <button
               onClick={() => onPhotosChange([])}
@@ -138,11 +141,24 @@ export default function Step1Upload({ photos, onPhotosChange, onNext }: Step1Upl
             {photos.map((photo) => (
               <div key={photo.id} className="relative group">
                 <div className="aspect-square rounded-lg overflow-hidden bg-gray-100">
-                  <img
-                    src={photo.preview}
-                    alt="Upload preview"
-                    className="w-full h-full object-cover"
-                  />
+                  {photo.mediaType === 'video' ? (
+                    <div className="relative w-full h-full">
+                      <video
+                        src={photo.preview}
+                        className="w-full h-full object-cover"
+                        muted
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 pointer-events-none">
+                        <Video className="w-8 h-8 text-white" />
+                      </div>
+                    </div>
+                  ) : (
+                    <img
+                      src={photo.preview}
+                      alt="Upload preview"
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                 </div>
                 <button
                   onClick={() => removePhoto(photo.id)}

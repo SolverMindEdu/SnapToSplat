@@ -43,7 +43,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
                 Field Documentation
               </h3>
               <p className="text-gray-600">
-                Archaeologists and travelers capture sites from multiple angles, creating comprehensive photographic datasets of ruins, artifacts, and inscriptions.
+                Archaeologists and travelers capture sites from multiple angles using photos and videos, creating comprehensive datasets of ruins, artifacts, and inscriptions.
               </p>
             </div>
 
@@ -55,7 +55,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
                 Gaussian Splatting
               </h3>
               <p className="text-gray-600">
-                Advanced neural rendering technology processes photographs into detailed 3D reconstructions, preserving textures and structural details.
+                Advanced neural rendering technology processes photos and videos into detailed 3D reconstructions, preserving textures and structural details.
               </p>
             </div>
 
@@ -91,7 +91,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
             Ready to Document History?
           </h2>
           <p className="text-amber-50 mb-6 max-w-2xl mx-auto">
-            Turn your site photographs into permanent 3D records. Join archaeologists and heritage enthusiasts preserving our shared past.
+            Turn your site photos and videos into permanent 3D records. Join archaeologists and heritage enthusiasts preserving our shared past.
           </p>
           <button
             onClick={() => onNavigate('contribute')}

@@ -18,7 +18,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-            Document ancient ruins, artifacts, and heritage sites. We digitally preserve them using Gaussian Splatting technology.
+            Document ancient ruins, artifacts, and heritage sites with photos and videos. We digitally preserve them using Gaussian Splatting technology.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
             <button
@@ -48,10 +48,10 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
               <Upload className="w-7 h-7 text-amber-600" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              Photograph the Site
+              Capture the Site
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Capture 30-80 photos from multiple angles. Circle the ruins, artifacts, or carvings to document every detail.
+              Take 30-80 photos or videos from multiple angles. Circle the ruins, artifacts, or carvings to document every detail.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
               Upload + Catalog
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Upload your photos and verify the location. We automatically extract GPS coordinates and capture dates.
+              Upload your photos and videos, then verify the location. We automatically extract GPS coordinates and capture dates.
             </p>
           </div>
 

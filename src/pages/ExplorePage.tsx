@@ -115,7 +115,7 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
               No reconstructions yet
             </h3>
             <p className="text-gray-600 mb-6">
-              Be the first to contribute photos and help preserve cultural heritage.
+              Be the first to contribute photos and videos to help preserve cultural heritage.
             </p>
             <button
               onClick={() => onNavigate('contribute')}
@@ -189,7 +189,7 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
 
                   <div className="flex items-center justify-between pt-3 border-t border-gray-100">
                     <span className="text-sm text-gray-500">
-                      {contribution.photo_count} photos
+                      {contribution.photo_count} files
                     </span>
                     <span className="text-sm font-medium text-amber-600 group-hover:text-amber-700">
                       View Splat →
@@ -250,9 +250,9 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
 
               <div className="mt-6 grid md:grid-cols-3 gap-4 text-sm">
                 <div>
-                  <p className="text-gray-500 mb-1">Photos</p>
+                  <p className="text-gray-500 mb-1">Media Files</p>
                   <p className="font-semibold text-gray-900">
-                    {viewerModal.contribution.photo_count} images
+                    {viewerModal.contribution.photo_count} files
                   </p>
                 </div>
                 <div>
@@ -312,7 +312,7 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
                   `${deleteModal.contribution.subject_type} in ${deleteModal.contribution.country}`}
               </h3>
               <p className="text-sm text-gray-600">
-                {deleteModal.contribution.photo_count} photos •{' '}
+                {deleteModal.contribution.photo_count} files •{' '}
                 {deleteModal.contribution.city_region
                   ? `${deleteModal.contribution.city_region}, ${deleteModal.contribution.country}`
                   : deleteModal.contribution.country}

@@ -3,6 +3,8 @@ export interface PhotoFile {
   file: File;
   preview: string;
   metadata?: PhotoMetadata;
+  mediaType?: 'image' | 'video';
+  mimeType?: string;
 }
 
 export interface PhotoMetadata {
