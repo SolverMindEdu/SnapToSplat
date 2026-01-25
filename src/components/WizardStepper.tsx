@@ -20,19 +20,19 @@ export default function WizardStepper({ currentStep, totalSteps, steps }: Wizard
               <div key={stepNumber} className="flex items-center flex-1">
                 <div className="flex flex-col items-center">
                   <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all ${
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all transform ${
                       isCompleted
-                        ? 'bg-amber-600 text-white'
+                        ? 'bg-amber-600 text-white scale-110'
                         : isCurrent
-                        ? 'bg-amber-600 text-white ring-4 ring-amber-100'
+                        ? 'bg-amber-600 text-white ring-4 ring-amber-100 scale-110'
                         : 'bg-gray-200 text-gray-500'
                     }`}
                   >
-                    {isCompleted ? <Check className="w-5 h-5" /> : stepNumber}
+                    {isCompleted ? <Check className="w-5 h-5 animate-scale-in" /> : stepNumber}
                   </div>
                   <p
-                    className={`mt-2 text-xs sm:text-sm font-medium ${
-                      isCurrent ? 'text-amber-600' : 'text-gray-500'
+                    className={`mt-2 text-xs sm:text-sm font-medium transition-all ${
+                      isCurrent ? 'text-amber-600 font-semibold' : 'text-gray-500'
                     }`}
                   >
                     {step}
@@ -40,7 +40,7 @@ export default function WizardStepper({ currentStep, totalSteps, steps }: Wizard
                 </div>
                 {stepNumber < totalSteps && (
                   <div
-                    className={`flex-1 h-1 mx-2 transition-all ${
+                    className={`flex-1 h-1 mx-2 transition-all duration-500 ${
                       isCompleted ? 'bg-amber-600' : 'bg-gray-200'
                     }`}
                   />

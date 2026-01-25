@@ -126,10 +126,11 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {contributions.map((contribution) => (
+            {contributions.map((contribution, index) => (
               <div
                 key={contribution.id}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden group relative"
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all overflow-hidden group relative hover:-translate-y-2 transform animate-fade-in-up"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Delete Button */}
                 <button
@@ -203,8 +204,8 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
 
       {/* 3D Model Viewer Modal */}
       {viewerModal.isOpen && viewerModal.contribution && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4 animate-fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden relative animate-scale-in">
             <button
               onClick={handleViewerClose}
               className="absolute top-4 right-4 z-10 p-2 bg-white rounded-full text-gray-600 hover:text-gray-900 transition-colors shadow-lg"
@@ -284,8 +285,8 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
 
       {/* Delete Confirmation Modal */}
       {deleteModal.isOpen && deleteModal.contribution && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 animate-fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative animate-scale-in">
             <button
               onClick={handleDeleteCancel}
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"

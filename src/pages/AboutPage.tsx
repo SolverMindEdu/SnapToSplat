@@ -9,7 +9,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
     <div className="min-h-screen bg-gradient-to-b from-amber-50/30 to-white py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             About Snap to Splat
           </h1>
@@ -19,7 +19,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
 
         {/* Mission Section */}
-        <div className="bg-white rounded-2xl shadow-lg border border-amber-200 p-8 mb-12">
+        <div className="bg-white rounded-2xl shadow-lg border border-amber-200 p-8 mb-12 animate-fade-in-up animation-delay-200 hover:shadow-xl transition-shadow">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Archaeological sites worldwide face threats from climate change, conflict, and natural decay. Snap to Splat empowers archaeologists, travelers, and heritage enthusiasts to create lasting digital records.
@@ -31,11 +31,11 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
 
         {/* How It Works */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center animate-fade-in-up animation-delay-400">
             The Technology Behind Snap to Splat
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl shadow-md border border-amber-100 p-6">
+            <div className="bg-white rounded-xl shadow-md border border-amber-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all transform animate-fade-in-up animation-delay-400">
               <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
                 <Camera className="w-6 h-6 text-amber-600" />
               </div>
@@ -47,7 +47,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md border border-amber-100 p-6">
+            <div className="bg-white rounded-xl shadow-md border border-amber-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all transform animate-fade-in-up animation-delay-400">
               <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-amber-600" />
               </div>
@@ -59,7 +59,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md border border-amber-100 p-6">
+            <div className="bg-white rounded-xl shadow-md border border-amber-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all transform animate-fade-in-up animation-delay-600">
               <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
                 <Globe className="w-6 h-6 text-amber-600" />
               </div>
@@ -71,7 +71,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md border border-amber-100 p-6">
+            <div className="bg-white rounded-xl shadow-md border border-amber-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all transform animate-fade-in-up animation-delay-600">
               <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
                 <Users className="w-6 h-6 text-amber-600" />
               </div>
@@ -86,7 +86,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-8 text-center text-white">
+        <div className="bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-8 text-center text-white animate-fade-in-up animation-delay-600 hover:shadow-2xl transition-shadow">
           <h2 className="text-2xl font-bold mb-4">
             Ready to Document History?
           </h2>
@@ -95,7 +95,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
           </p>
           <button
             onClick={() => onNavigate('contribute')}
-            className="px-8 py-4 bg-white text-amber-700 font-semibold rounded-lg hover:bg-amber-50 transition-colors shadow-lg"
+            className="px-8 py-4 bg-white text-amber-700 font-semibold rounded-lg hover:bg-amber-50 transition-all shadow-lg hover:scale-105 transform"
           >
             Start Documenting
           </button>

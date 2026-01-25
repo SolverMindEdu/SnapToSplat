@@ -10,26 +10,26 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up">
             From snapshots to
             <br />
             <span className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
               3D archaeological splats
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
             Document ancient ruins, artifacts, and heritage sites. We digitally preserve them using Gaussian Splatting technology.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
             <button
               onClick={() => onNavigate('contribute')}
-              className="px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold rounded-lg hover:from-amber-700 hover:to-orange-700 transition-all shadow-lg hover:shadow-xl"
+              className="px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold rounded-lg hover:from-amber-700 hover:to-orange-700 transition-all shadow-lg hover:shadow-xl hover:scale-105 transform"
             >
               Start Documenting
             </button>
             <button
               onClick={() => onNavigate('explore')}
-              className="px-8 py-4 bg-white text-amber-700 font-semibold rounded-lg hover:bg-amber-50 transition-colors border-2 border-amber-600"
+              className="px-8 py-4 bg-white text-amber-700 font-semibold rounded-lg hover:bg-amber-50 transition-all border-2 border-amber-600 hover:scale-105 transform"
             >
               Explore Archive
             </button>
@@ -39,12 +39,12 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
 
       {/* How It Works Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 animate-fade-in-up">
           Document archaeological sites in three steps
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow border border-amber-100">
-            <div className="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
+          <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-amber-100 hover:-translate-y-2 transform animate-fade-in-up animation-delay-200">
+            <div className="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <Upload className="w-7 h-7 text-amber-600" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -55,8 +55,8 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow border border-amber-100">
-            <div className="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
+          <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-amber-100 hover:-translate-y-2 transform animate-fade-in-up animation-delay-400">
+            <div className="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <Compass className="w-7 h-7 text-amber-600" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -67,8 +67,8 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow border border-amber-100">
-            <div className="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
+          <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-amber-100 hover:-translate-y-2 transform animate-fade-in-up animation-delay-600">
+            <div className="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <Cpu className="w-7 h-7 text-amber-600" />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
