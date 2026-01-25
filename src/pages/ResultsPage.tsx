@@ -105,21 +105,9 @@ export default function ResultsPage({
             <h3 className="text-2xl font-bold text-gray-900 mb-3">
               Creating Your 3D Splat
             </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Your site documentation has been uploaded successfully. Our team will process your photos using Gaussian Splatting to create a permanent 3D archaeological record.
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Your site documentation has been uploaded successfully. Our team will process your photos using Gaussian Splatting to create a permanent 3D archaeological record. You'll be notified when your splat is ready to view.
             </p>
-            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-left">
-              <p className="text-sm font-medium text-amber-900 mb-2">For Admin:</p>
-              <p className="text-sm text-amber-800 mb-2">
-                Access the Supabase database to download photos and generate the splat.
-              </p>
-              <div className="bg-white rounded p-3 font-mono text-xs text-gray-700 break-all">
-                Contribution ID: {contributionId}
-              </div>
-              <p className="text-sm text-amber-800 mt-3">
-                After processing, update the <span className="font-mono bg-white px-2 py-0.5 rounded">model_preview_url</span> field with the viewer embed link.
-              </p>
-            </div>
           </div>
         </div>
 
