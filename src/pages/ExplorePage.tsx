@@ -229,7 +229,8 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
                     src={viewerModal.contribution.model_preview_url}
                     className="w-full h-full"
                     title="3D Model Viewer"
-                    allow="fullscreen"
+                    allow="camera; microphone; xr-spatial-tracking; fullscreen"
+                    allowFullScreen
                   />
                 </div>
               ) : (
