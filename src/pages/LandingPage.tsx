@@ -81,80 +81,47 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
         </div>
       </div>
 
-      {/* Two Presentation Canvases */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Innovation Presentation */}
-          <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-12 shadow-2xl hover:shadow-3xl transition-all hover:-translate-y-1 transform min-h-[500px] flex flex-col justify-between">
-            <div>
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
-                <Lightbulb className="w-8 h-8 text-white" />
-              </div>
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Innovation
-              </h2>
-              <p className="text-blue-100 text-lg leading-relaxed mb-8">
-                Pioneering new technologies and methodologies for cultural preservation. Our Gaussian Splatting approach revolutionizes how we capture and store archaeological data.
-              </p>
-              <ul className="space-y-4 text-blue-50">
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl">•</span>
-                  <span>AI-powered 3D reconstruction from 2D images</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl">•</span>
-                  <span>Real-time processing and cloud storage</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl">•</span>
-                  <span>Open-source collaboration framework</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl">•</span>
-                  <span>Accessible to researchers worldwide</span>
-                </li>
-              </ul>
+      {/* Innovation Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 shadow-xl mb-6">
+          <div className="flex items-center space-x-4">
+            <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+              <Lightbulb className="w-6 h-6 text-white" />
             </div>
-            <button className="mt-8 px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-all self-start">
-              Learn More
-            </button>
+            <h2 className="text-3xl font-bold text-white">Innovation</h2>
           </div>
+        </div>
 
-          {/* Robot Design Presentation */}
-          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-12 shadow-2xl hover:shadow-3xl transition-all hover:-translate-y-1 transform min-h-[500px] flex flex-col justify-between">
-            <div>
-              <div className="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm border border-cyan-500/30">
-                <Bot className="w-8 h-8 text-cyan-400" />
-              </div>
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Robot Design
-              </h2>
-              <p className="text-slate-300 text-lg leading-relaxed mb-8">
-                Advanced robotics for automated site documentation. Our autonomous systems can navigate challenging terrain and capture comprehensive archaeological data.
-              </p>
-              <ul className="space-y-4 text-slate-200">
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl text-cyan-400">•</span>
-                  <span>Autonomous navigation and mapping</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl text-cyan-400">•</span>
-                  <span>Multi-sensor data collection systems</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl text-cyan-400">•</span>
-                  <span>Precision movement for optimal angles</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-2xl text-cyan-400">•</span>
-                  <span>Weather-resistant field deployment</span>
-                </li>
-              </ul>
+        <div className="w-full bg-white rounded-2xl shadow-lg overflow-hidden" style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+          <iframe
+            loading="lazy"
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+            src="https://www.canva.com/design/YOUR_DESIGN_ID/view?embed"
+            allowFullScreen
+            allow="fullscreen"
+          />
+        </div>
+      </div>
+
+      {/* Robot Design Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 shadow-xl mb-6">
+          <div className="flex items-center space-x-4">
+            <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center backdrop-blur-sm border border-cyan-500/30">
+              <Bot className="w-6 h-6 text-cyan-400" />
             </div>
-            <button className="mt-8 px-6 py-3 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-all self-start">
-              View Designs
-            </button>
+            <h2 className="text-3xl font-bold text-white">Robot Design</h2>
           </div>
+        </div>
+
+        <div className="w-full bg-white rounded-2xl shadow-lg overflow-hidden" style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+          <iframe
+            loading="lazy"
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+            src="https://www.canva.com/design/YOUR_DESIGN_ID/view?embed"
+            allowFullScreen
+            allow="fullscreen"
+          />
         </div>
       </div>
 
