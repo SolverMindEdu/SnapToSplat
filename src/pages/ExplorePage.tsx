@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MapPin, Calendar, Eye, Loader2, Trash2, X, Clock } from 'lucide-react';
+import { MapPin, Calendar, Eye, Loader2, Trash2, X, Clock, Download } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { Contribution } from '../types';
 
@@ -19,6 +19,7 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
     isOpen: boolean;
     contribution: Contribution | null;
   }>({ isOpen: false, contribution: null });
+  const [downloading, setDownloading] = useState(false);
 
   useEffect(() => {
     fetchContributions();
@@ -81,6 +82,54 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
     setViewerModal({ isOpen: false, contribution: null });
   };
 
+  const handleDownloadFiles = async (contribution: Contribution) => {
+    if (!contribution) return;
+
+    setDownloading(true);
+    try {
+      const { data: photos, error } = await supabase
+        .from('photos')
+        .select('file_path, file_name, media_type')
+        .eq('contribution_id', contribution.id);
+
+      if (error) throw error;
+
+      if (!photos || photos.length === 0) {
+        alert('No files found for this contribution.');
+        return;
+      }
+
+      for (const photo of photos) {
+        const { data, error: downloadError } = await supabase.storage
+          .from('archaeological-media')
+          .download(photo.file_path);
+
+        if (downloadError) {
+          console.error('Error downloading file:', downloadError);
+          continue;
+        }
+
+        const url = window.URL.createObjectURL(data);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = photo.file_name;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+
+      alert(`Downloaded ${photos.length} file(s) successfully!`);
+    } catch (error) {
+      console.error('Error downloading files:', error);
+      alert('Failed to download files. Please try again.');
+    } finally {
+      setDownloading(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-amber-50/30 to-white flex items-center justify-center">
@@ -132,14 +181,26 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
                 className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all overflow-hidden group relative hover:-translate-y-2 transform animate-fade-in-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Delete Button */}
-                <button
-                  onClick={(e) => handleDeleteClick(e, contribution)}
-                  className="absolute top-3 left-3 z-10 p-2 bg-red-600 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-700 shadow-lg"
-                  title="Delete reconstruction"
-                >
-                  <Trash2 className="w-4 h-4" />
-                </button>
+                {/* Action Buttons */}
+                <div className="absolute top-3 left-3 z-10 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDownloadFiles(contribution);
+                    }}
+                    className="p-2 bg-amber-600 text-white rounded-full hover:bg-amber-700 shadow-lg"
+                    title="Download all files"
+                  >
+                    <Download className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={(e) => handleDeleteClick(e, contribution)}
+                    className="p-2 bg-red-600 text-white rounded-full hover:bg-red-700 shadow-lg"
+                    title="Delete reconstruction"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
 
                 {/* Preview Image Placeholder */}
                 <div
@@ -278,6 +339,26 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
                   <p className="text-gray-700">{viewerModal.contribution.description}</p>
                 </div>
               )}
+
+              <div className="mt-6 pt-4 border-t border-gray-200">
+                <button
+                  onClick={() => handleDownloadFiles(viewerModal.contribution!)}
+                  disabled={downloading}
+                  className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold rounded-lg hover:from-amber-700 hover:to-orange-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {downloading ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <span>Downloading...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Download className="w-5 h-5" />
+                      <span>Download All Photos & Videos</span>
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         </div>
