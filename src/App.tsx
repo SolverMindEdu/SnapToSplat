@@ -5,9 +5,12 @@ import ExplorePage from './pages/ExplorePage';
 import ContributionWizard from './pages/ContributionWizard';
 import ResultsPage from './pages/ResultsPage';
 import AboutPage from './pages/AboutPage';
+import InnovationCanvasPage from './pages/InnovationCanvasPage';
+import RobotDesignPage from './pages/RobotDesignPage';
+import JourneyPage from './pages/JourneyPage';
 import { ContributionFormData } from './types';
 
-type Page = 'home' | 'explore' | 'contribute' | 'results' | 'about';
+type Page = 'home' | 'explore' | 'contribute' | 'results' | 'about' | 'innovation-canvas' | 'robot-design' | 'journey';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -55,6 +58,12 @@ function App() {
       )}
 
       {currentPage === 'about' && <AboutPage onNavigate={handleNavigate} />}
+
+      {currentPage === 'innovation-canvas' && <InnovationCanvasPage onNavigate={handleNavigate} />}
+
+      {currentPage === 'robot-design' && <RobotDesignPage onNavigate={handleNavigate} />}
+
+      {currentPage === 'journey' && <JourneyPage onNavigate={handleNavigate} />}
     </div>
   );
 }

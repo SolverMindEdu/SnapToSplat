@@ -42,6 +42,26 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               Contribute
             </button>
             <button
+              onClick={() => onNavigate('innovation-canvas')}
+              className={`text-sm font-medium transition-all hover:scale-110 transform ${
+                currentPage === 'innovation-canvas'
+                  ? 'text-amber-600'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              Innovation
+            </button>
+            <button
+              onClick={() => onNavigate('robot-design')}
+              className={`text-sm font-medium transition-all hover:scale-110 transform ${
+                currentPage === 'robot-design'
+                  ? 'text-amber-600'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              Robot
+            </button>
+            <button
               onClick={() => onNavigate('about')}
               className={`text-sm font-medium transition-all hover:scale-110 transform ${
                 currentPage === 'about'
