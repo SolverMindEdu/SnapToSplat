@@ -120,31 +120,59 @@ export default function JourneyPage({ onNavigate }: JourneyPageProps) {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-shadow">
               <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-4 text-white">
-                <h3 className="text-xl font-bold">Team Alpha</h3>
-                <p className="text-blue-100 text-sm">Mechanical Systems & Structure</p>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold">Team Alpha</h3>
+                    <p className="text-blue-100 text-sm">Mechanical Systems & Structure</p>
+                  </div>
+                  <a
+                    href="https://www.canva.com/design/DAGw1r2Ykxw/rN3srxKaitR1dgW80Y1mTA/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-1.5 bg-white/20 hover:bg-white/30 rounded-lg transition-all"
+                  >
+                    <span className="text-xs font-semibold">View</span>
+                  </a>
+                </div>
               </div>
-              <div className="aspect-video w-full bg-gray-100">
-                <iframe
-                  src="https://www.canva.com/design/DAGw1r2Ykxw/rN3srxKaitR1dgW80Y1mTA/view?embed"
-                  className="w-full h-full"
-                  title="Robot in 10 Days - Team Alpha"
-                  allowFullScreen
-                />
+              <div className="aspect-video w-full bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center p-6">
+                <a
+                  href="https://www.canva.com/design/DAGw1r2Ykxw/rN3srxKaitR1dgW80Y1mTA/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all hover:scale-105 transform"
+                >
+                  <span>Open Presentation</span>
+                </a>
               </div>
             </div>
 
             <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-shadow">
-              <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-4 text-white">
-                <h3 className="text-xl font-bold">Team Beta</h3>
-                <p className="text-purple-100 text-sm">Electronics & Software</p>
+              <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 p-4 text-white">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold">Team Beta</h3>
+                    <p className="text-violet-100 text-sm">Electronics & Software</p>
+                  </div>
+                  <a
+                    href="https://www.canva.com/design/DAGxNpFBbgs/AzbzFfabDSSqGTKCF5VPFg/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-3 py-1.5 bg-white/20 hover:bg-white/30 rounded-lg transition-all"
+                  >
+                    <span className="text-xs font-semibold">View</span>
+                  </a>
+                </div>
               </div>
-              <div className="aspect-video w-full bg-gray-100">
-                <iframe
-                  src="https://www.canva.com/design/DAGxNpFBbgs/AzbzFfabDSSqGTKCF5VPFg/view?embed"
-                  className="w-full h-full"
-                  title="Robot in 10 Days - Team Beta"
-                  allowFullScreen
-                />
+              <div className="aspect-video w-full bg-gradient-to-br from-violet-50 to-fuchsia-50 flex items-center justify-center p-6">
+                <a
+                  href="https://www.canva.com/design/DAGxNpFBbgs/AzbzFfabDSSqGTKCF5VPFg/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all hover:scale-105 transform"
+                >
+                  <span>Open Presentation</span>
+                </a>
               </div>
             </div>
           </div>
