@@ -1,4 +1,4 @@
-import { Bot, Cpu, Layers, Zap, ExternalLink, ArrowRight } from 'lucide-react';
+import { Bot, Cpu, Layers, Zap, ExternalLink, ArrowRight, Play } from 'lucide-react';
 
 interface RobotDesignPageProps {
   onNavigate: (page: string) => void;
@@ -52,8 +52,26 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
           </div>
         </div>
 
+        <div className="bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden mb-12 animate-fade-in-up animation-delay-300">
+          <div className="bg-gradient-to-r from-red-600 to-rose-600 p-6 text-white">
+            <div className="flex items-center justify-center gap-3">
+              <Play className="w-6 h-6" />
+              <h2 className="text-2xl font-bold">See It In Action</h2>
+            </div>
+          </div>
+          <div className="aspect-video w-full bg-black">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/AoqryoRjqNc"
+              title="Robot Design Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-6 hover:shadow-xl transition-all hover:scale-105 transform animate-fade-in-up animation-delay-300">
+          <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-6 hover:shadow-xl transition-all hover:scale-105 transform animate-fade-in-up animation-delay-400">
             <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
               <Cpu className="w-6 h-6 text-slate-600" />
             </div>
@@ -63,7 +81,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg border border-blue-100 p-6 hover:shadow-xl transition-all hover:scale-105 transform animate-fade-in-up animation-delay-400">
+          <div className="bg-white rounded-xl shadow-lg border border-blue-100 p-6 hover:shadow-xl transition-all hover:scale-105 transform animate-fade-in-up animation-delay-500">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
               <Layers className="w-6 h-6 text-blue-600" />
             </div>
@@ -73,7 +91,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg border border-emerald-100 p-6 hover:shadow-xl transition-all hover:scale-105 transform animate-fade-in-up animation-delay-500">
+          <div className="bg-white rounded-xl shadow-lg border border-emerald-100 p-6 hover:shadow-xl transition-all hover:scale-105 transform animate-fade-in-up animation-delay-600">
             <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
               <Zap className="w-6 h-6 text-emerald-600" />
             </div>
@@ -83,7 +101,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg border border-amber-100 p-6 hover:shadow-xl transition-all hover:scale-105 transform animate-fade-in-up animation-delay-600">
+          <div className="bg-white rounded-xl shadow-lg border border-amber-100 p-6 hover:shadow-xl transition-all hover:scale-105 transform animate-fade-in-up animation-delay-700">
             <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
               <Bot className="w-6 h-6 text-amber-600" />
             </div>
@@ -95,7 +113,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-gradient-to-br from-slate-700 to-slate-900 rounded-2xl p-8 text-white shadow-xl animate-fade-in-up animation-delay-700">
+          <div className="bg-gradient-to-br from-slate-700 to-slate-900 rounded-2xl p-8 text-white shadow-xl animate-fade-in-up animation-delay-800">
             <h3 className="text-2xl font-bold mb-4">Key Features</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
@@ -125,7 +143,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
             </ul>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200 animate-fade-in-up animation-delay-800">
+          <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200 animate-fade-in-up animation-delay-900">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Technical Specifications</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
@@ -156,7 +174,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-slate-700 to-slate-900 rounded-2xl p-10 text-center text-white animate-fade-in-up animation-delay-1000 hover:shadow-2xl transition-shadow">
+        <div className="bg-gradient-to-r from-slate-700 to-slate-900 rounded-2xl p-10 text-center text-white animate-fade-in-up animation-delay-1100 hover:shadow-2xl transition-shadow">
           <h2 className="text-3xl font-bold mb-4">
             The Journey Behind the Design
           </h2>
