@@ -53,7 +53,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
               <iframe
                 loading="lazy"
                 style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
-                src="https://www.canva.com/design/YOUR_DESIGN_ID/view?embed"
+                src="https://www.canva.com/design/DAG1ru_8NvE/view?embed"
                 allowFullScreen
                 allow="fullscreen"
               />
@@ -80,7 +80,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
               <iframe
                 loading="lazy"
                 style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
-                src="https://www.canva.com/design/YOUR_DESIGN_ID/view?embed"
+                src="https://www.canva.com/design/DAG-QPkhC4M/view?embed"
                 allowFullScreen
                 allow="fullscreen"
               />

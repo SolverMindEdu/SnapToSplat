@@ -30,25 +30,19 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-all hover:scale-105 transform"
               >
-                <span className="text-sm font-semibold">View Full Design</span>
+                <span className="text-sm font-semibold">View Fullscreen</span>
                 <ExternalLink className="w-4 h-4" />
               </a>
             </div>
           </div>
-          <div className="aspect-video w-full bg-gradient-to-br from-slate-50 to-gray-100 flex items-center justify-center p-8">
-            <div className="text-center">
-              <a
-                href="https://www.canva.com/design/DAG-QPkhC4M/NzFsxsb0nJNy-cNwtEEhoQ/view"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-slate-700 to-slate-900 text-white font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 transform"
-              >
-                <Bot className="w-5 h-5" />
-                <span>Open Robot Design</span>
-                <ExternalLink className="w-5 h-5" />
-              </a>
-              <p className="mt-4 text-gray-600 text-sm">Click to view our complete robot design documentation</p>
-            </div>
+          <div className="w-full bg-white overflow-hidden" style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+            <iframe
+              loading="lazy"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+              src="https://www.canva.com/design/DAG-QPkhC4M/view?embed"
+              allowFullScreen
+              allow="fullscreen"
+            />
           </div>
         </div>
 
