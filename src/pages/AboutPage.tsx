@@ -1,4 +1,4 @@
-import { Camera, Globe, Users, Zap } from 'lucide-react';
+import { Camera, Globe, Users, Zap, Sparkles, Box, Scissors } from 'lucide-react';
 
 interface AboutPageProps {
   onNavigate: (page: string) => void;
@@ -85,8 +85,135 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
           </div>
         </div>
 
+        {/* What is 3D Gaussian Splatting */}
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-lg border border-blue-200 p-8 mb-12 animate-fade-in-up animation-delay-800">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            What is 3D Gaussian Splatting?
+          </h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            3D Gaussian Splatting (3DGS) is a revolutionary technique for real-time radiance field rendering. Instead of using neural networks like NeRF, it represents scenes as millions of 3D Gaussians that can be rendered extremely fast using rasterization.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Major tech companies are investing heavily in this technology because it enables photorealistic 3D content creation from just photos or videos, with applications in gaming, VR/AR, digital twins, and more.
+          </p>
+        </div>
+
+        {/* 3D GS Trend */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center animate-fade-in-up animation-delay-1000">
+            3D GS Trend
+          </h2>
+          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-1000">
+            Explore the leading companies and research teams pushing the boundaries of 3D Gaussian Splatting technology. From tech giants to specialized startups, see who's shaping the future of 3D reconstruction.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Microsoft TRELLIS 2 */}
+            <div className="bg-white rounded-xl shadow-md border border-gray-200 p-6 hover:shadow-xl hover:-translate-y-1 transition-all transform animate-fade-in-up animation-delay-1000">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <Sparkles className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Microsoft</h3>
+                  <p className="text-sm text-gray-500">TRELLIS 2</p>
+                </div>
+              </div>
+              <p className="text-gray-700 mb-4">
+                AI that turns photos and videos into full 3D scenes. Best for rebuilding real environments with photorealistic quality.
+              </p>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <span>Photo-to-3D</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <span>Video-to-3D</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <span>Real environments</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <span>Full scene reconstruction</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Apple Sharp 3D */}
+            <div className="bg-white rounded-xl shadow-md border border-gray-200 p-6 hover:shadow-xl hover:-translate-y-1 transition-all transform animate-fade-in-up animation-delay-1200">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+                  <Box className="w-6 h-6 text-gray-700" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Apple</h3>
+                  <p className="text-sm text-gray-500">Sharp 3D</p>
+                </div>
+              </div>
+              <p className="text-gray-700 mb-4">
+                AI that makes super clean, sharp 3D models. Best for high-quality meshes and product scans with exceptional detail.
+              </p>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-gray-500 rounded-full"></div>
+                  <span>High-quality meshes</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-gray-500 rounded-full"></div>
+                  <span>Product scans</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-gray-500 rounded-full"></div>
+                  <span>Sharp details</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-gray-500 rounded-full"></div>
+                  <span>Clean output</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Meta SAM 3D */}
+            <div className="bg-white rounded-xl shadow-md border border-gray-200 p-6 hover:shadow-xl hover:-translate-y-1 transition-all transform animate-fade-in-up animation-delay-1400">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <Scissors className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Meta</h3>
+                  <p className="text-sm text-gray-500">SAM 3D</p>
+                </div>
+              </div>
+              <p className="text-gray-700 mb-4">
+                AI that selects and isolates objects in 3D. Best for cutting objects out of 3D scenes and precise object manipulation.
+              </p>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <span>3D object selection</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <span>Object isolation</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <span>Scene editing</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <span>Precise cutting</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Call to Action */}
-        <div className="bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-8 text-center text-white animate-fade-in-up animation-delay-600 hover:shadow-2xl transition-shadow">
+        <div className="bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-8 text-center text-white animate-fade-in-up animation-delay-1600 hover:shadow-2xl transition-shadow">
           <h2 className="text-2xl font-bold mb-4">
             Ready to Document History?
           </h2>
