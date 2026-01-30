@@ -6,7 +6,7 @@ interface Step2MetadataProps {
   photos: PhotoFile[];
   formData: ContributionFormData;
   onFormDataChange: (data: ContributionFormData) => void;
-  onNext: () => void;
+  onNext: (data: ContributionFormData) => void;
   onBack: () => void;
 }
 
@@ -54,7 +54,7 @@ export default function Step2Metadata({
 
   const handleNext = () => {
     onFormDataChange(localData);
-    onNext();
+    onNext(localData);
   };
 
   const isValid = localData.country && localData.subjectType;

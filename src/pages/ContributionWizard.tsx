@@ -25,16 +25,17 @@ export default function ContributionWizard({ onComplete }: ContributionWizardPro
     setCurrentStep(2);
   };
 
-  const handleStep2Next = () => {
+  const handleStep2Next = (updatedFormData: ContributionFormData) => {
+    setFormData(updatedFormData);
     setCurrentStep(3);
-    saveContribution();
+    saveContribution(updatedFormData);
   };
 
   const handleStep2Back = () => {
     setCurrentStep(1);
   };
 
-  const saveContribution = async () => {
+  const saveContribution = async (dataToSave: ContributionFormData) => {
     try {
       const photosWithGPS = photos.filter(
         p => p.metadata?.latitude && p.metadata?.longitude
@@ -42,7 +43,7 @@ export default function ContributionWizard({ onComplete }: ContributionWizardPro
 
       let latitude = null;
       let longitude = null;
-      let locationName = formData.siteName || `${formData.subjectType} in ${formData.country}`;
+      let locationName = dataToSave.siteName || `${dataToSave.subjectType} in ${dataToSave.country}`;
 
       if (photosWithGPS.length > 0) {
         latitude = photosWithGPS.reduce((sum, p) => sum + (p.metadata?.latitude || 0), 0) / photosWithGPS.length;
@@ -52,17 +53,17 @@ export default function ContributionWizard({ onComplete }: ContributionWizardPro
       const { data: contribution, error: contributionError } = await supabase
         .from('contributions')
         .insert({
-          site_name: formData.siteName,
-          description: formData.description,
-          country: formData.country,
-          city_region: formData.cityRegion,
-          subject_type: formData.subjectType,
+          site_name: dataToSave.siteName,
+          description: dataToSave.description,
+          country: dataToSave.country,
+          city_region: dataToSave.cityRegion,
+          subject_type: dataToSave.subjectType,
           latitude,
           longitude,
           location_name: locationName,
           photo_count: photos.length,
-          capture_date: formData.captureDate?.toISOString().split('T')[0],
-          contributor_email: formData.contributorEmail,
+          capture_date: dataToSave.captureDate?.toISOString().split('T')[0],
+          contributor_email: dataToSave.contributorEmail,
           status: 'processing'
         })
         .select()
