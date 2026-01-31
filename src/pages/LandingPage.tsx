@@ -29,7 +29,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Learn About Our Technology</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Discover how we combine cutting-edge innovation with robotics to revolutionize archaeological preservation
+              Discover how we combine cutting-edge 3D scan technologies to revolutionize archaeological preservation
             </p>
           </div>
 

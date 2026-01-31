@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { MapPin, Calendar, Eye, Loader2, Trash2, X, Clock } from 'lucide-react';
+import { MapPin, Calendar, Eye, Loader2, X, Clock } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { Contribution } from '../types';
 
@@ -10,11 +10,6 @@ interface ExplorePageProps {
 export default function ExplorePage({ onNavigate }: ExplorePageProps) {
   const [contributions, setContributions] = useState<Contribution[]>([]);
   const [loading, setLoading] = useState(true);
-  const [deleteModal, setDeleteModal] = useState<{
-    isOpen: boolean;
-    contribution: Contribution | null;
-  }>({ isOpen: false, contribution: null });
-  const [deleting, setDeleting] = useState(false);
   const [viewerModal, setViewerModal] = useState<{
     isOpen: boolean;
     contribution: Contribution | null;
@@ -40,37 +35,6 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleDeleteClick = (e: React.MouseEvent, contribution: Contribution) => {
-    e.stopPropagation();
-    setDeleteModal({ isOpen: true, contribution });
-  };
-
-  const handleDeleteConfirm = async () => {
-    if (!deleteModal.contribution) return;
-
-    setDeleting(true);
-    try {
-      const { error } = await supabase
-        .from('contributions')
-        .delete()
-        .eq('id', deleteModal.contribution.id);
-
-      if (error) throw error;
-
-      setContributions(contributions.filter(c => c.id !== deleteModal.contribution!.id));
-      setDeleteModal({ isOpen: false, contribution: null });
-    } catch (error) {
-      console.error('Error deleting contribution:', error);
-      alert('Failed to delete reconstruction. Please try again.');
-    } finally {
-      setDeleting(false);
-    }
-  };
-
-  const handleDeleteCancel = () => {
-    setDeleteModal({ isOpen: false, contribution: null });
   };
 
   const handleViewClick = (contribution: Contribution) => {
@@ -132,15 +96,6 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
                 className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all overflow-hidden group relative hover:-translate-y-2 transform animate-fade-in-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Delete Button */}
-                <button
-                  onClick={(e) => handleDeleteClick(e, contribution)}
-                  className="absolute top-3 left-3 z-10 p-2 bg-red-600 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-700 shadow-lg"
-                  title="Delete reconstruction"
-                >
-                  <Trash2 className="w-4 h-4" />
-                </button>
-
                 {/* Preview Image Placeholder */}
                 <div
                   onClick={() => handleViewClick(contribution)}
@@ -278,69 +233,6 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
                   <p className="text-gray-700">{viewerModal.contribution.description}</p>
                 </div>
               )}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Delete Confirmation Modal */}
-      {deleteModal.isOpen && deleteModal.contribution && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 animate-fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative animate-scale-in">
-            <button
-              onClick={handleDeleteCancel}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
-            >
-              <X className="w-6 h-6" />
-            </button>
-
-            <div className="mb-6">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Trash2 className="w-8 h-8 text-red-600" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900 text-center mb-2">
-                Delete Reconstruction?
-              </h2>
-              <p className="text-gray-600 text-center">
-                Are you sure you want to delete this reconstruction? This action cannot be undone.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-lg p-4 mb-6">
-              <h3 className="font-semibold text-gray-900 mb-1">
-                {deleteModal.contribution.site_name ||
-                  `${deleteModal.contribution.subject_type} in ${deleteModal.contribution.country}`}
-              </h3>
-              <p className="text-sm text-gray-600">
-                {deleteModal.contribution.photo_count} files •{' '}
-                {deleteModal.contribution.city_region
-                  ? `${deleteModal.contribution.city_region}, ${deleteModal.contribution.country}`
-                  : deleteModal.contribution.country}
-              </p>
-            </div>
-
-            <div className="flex space-x-3">
-              <button
-                onClick={handleDeleteCancel}
-                disabled={deleting}
-                className="flex-1 px-4 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleDeleteConfirm}
-                disabled={deleting}
-                className="flex-1 px-4 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors disabled:opacity-50 flex items-center justify-center space-x-2"
-              >
-                {deleting ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    <span>Deleting...</span>
-                  </>
-                ) : (
-                  <span>Delete</span>
-                )}
-              </button>
             </div>
           </div>
         </div>
