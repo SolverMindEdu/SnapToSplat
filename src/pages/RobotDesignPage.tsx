@@ -1,4 +1,4 @@
-import { Bot, Cpu, Layers, Zap, ExternalLink, Play, Calendar, Users, CheckCircle, Rocket } from 'lucide-react';
+import { Bot, ExternalLink, Play, Calendar, Users, CheckCircle, Rocket } from 'lucide-react';
 
 interface RobotDesignPageProps {
   onNavigate: (page: string) => void;
@@ -61,110 +61,6 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          <div className="bg-white rounded-xl shadow-lg border border-slate-100 p-6 hover:shadow-xl transition-all hover:scale-105 transform animate-fade-in-up animation-delay-400">
-            <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
-              <Cpu className="w-6 h-6 text-slate-600" />
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Intelligent Systems</h3>
-            <p className="text-gray-600 text-sm">
-              Advanced computer vision and AI for autonomous navigation and optimal photo capture angles.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg border border-blue-100 p-6 hover:shadow-xl transition-all hover:scale-105 transform animate-fade-in-up animation-delay-500">
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-              <Layers className="w-6 h-6 text-blue-600" />
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Modular Design</h3>
-            <p className="text-gray-600 text-sm">
-              Adaptable architecture that can be configured for different terrain types and site conditions.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg border border-emerald-100 p-6 hover:shadow-xl transition-all hover:scale-105 transform animate-fade-in-up animation-delay-600">
-            <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-              <Zap className="w-6 h-6 text-emerald-600" />
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Rapid Deployment</h3>
-            <p className="text-gray-600 text-sm">
-              Quick setup and operation, designed for efficiency in remote archaeological locations.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-xl shadow-lg border border-amber-100 p-6 hover:shadow-xl transition-all hover:scale-105 transform animate-fade-in-up animation-delay-700">
-            <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-              <Bot className="w-6 h-6 text-amber-600" />
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Autonomous</h3>
-            <p className="text-gray-600 text-sm">
-              Self-sufficient operation with minimal human intervention for consistent documentation quality.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-gradient-to-br from-slate-700 to-slate-900 rounded-2xl p-8 text-white shadow-xl animate-fade-in-up animation-delay-800">
-            <h3 className="text-2xl font-bold mb-4">Key Features</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span>360-degree camera system for comprehensive coverage</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span>GPS and SLAM for precise positioning and mapping</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span>Weather-resistant design for outdoor operation</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <span>Real-time data processing and upload capabilities</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200 animate-fade-in-up animation-delay-900">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Technical Specifications</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-slate-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div className="w-2 h-2 bg-slate-600 rounded-full"></div>
-                </div>
-                <span className="text-gray-700">High-resolution multi-camera array</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                </div>
-                <span className="text-gray-700">Embedded AI processing unit</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div className="w-2 h-2 bg-emerald-600 rounded-full"></div>
-                </div>
-                <span className="text-gray-700">All-terrain mobility system</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-6 h-6 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <div className="w-2 h-2 bg-amber-600 rounded-full"></div>
-                </div>
-                <span className="text-gray-700">Extended battery life for full-day operation</span>
-              </li>
-            </ul>
           </div>
         </div>
 
@@ -379,6 +275,17 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
               What seemed impossible became reality through teamwork, determination, and innovative thinking. This same spirit drives our mission to preserve archaeological heritage.
             </p>
           </div>
+        </div>
+
+        <div className="mt-16 pb-8 flex flex-col items-center justify-center gap-4">
+          <img
+            src="/52736_solvers_of_x&y_logo.png"
+            alt="Solvers of X and Y Logo"
+            className="w-32 h-32 object-contain"
+          />
+          <p className="text-gray-600 text-lg font-medium">
+            Made by Team 52777 Solvers of X & Y
+          </p>
         </div>
       </div>
     </div>
