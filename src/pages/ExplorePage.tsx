@@ -155,6 +155,13 @@ export default function ExplorePage({ onNavigate }: ExplorePageProps) {
             ))}
           </div>
         )}
+
+        {/* Attribution */}
+        <div className="mt-16 text-center">
+          <p className="text-sm text-gray-500">
+            Made by 52777 Solvers of X&Y
+          </p>
+        </div>
       </div>
 
       {/* 3D Model Viewer Modal */}
