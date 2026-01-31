@@ -25,7 +25,7 @@ export default function InnovationCanvasPage({ onNavigate }: InnovationCanvasPag
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold">Strategic Overview</h2>
               <a
-                href="https://www.canva.com/design/DAG1ru_8NvE/v4jIaYOJUSG2kIuHklWsqA/view"
+                href="https://www.canva.com/design/DAG1ru_8NvE/EE77e2wSUtE94HwF-kTnIA/view"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-all hover:scale-105 transform"
@@ -35,20 +35,14 @@ export default function InnovationCanvasPage({ onNavigate }: InnovationCanvasPag
               </a>
             </div>
           </div>
-          <div className="aspect-video w-full bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center p-8">
-            <div className="text-center">
-              <a
-                href="https://www.canva.com/design/DAG1ru_8NvE/v4jIaYOJUSG2kIuHklWsqA/view"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 transform"
-              >
-                <Lightbulb className="w-5 h-5" />
-                <span>Open Innovation Canvas</span>
-                <ExternalLink className="w-5 h-5" />
-              </a>
-              <p className="mt-4 text-gray-600 text-sm">Click to view our complete innovation strategy</p>
-            </div>
+          <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+            <iframe
+              loading="lazy"
+              className="absolute top-0 left-0 w-full h-full border-0"
+              src="https://www.canva.com/design/DAG1ru_8NvE/EE77e2wSUtE94HwF-kTnIA/view?embed"
+              allowFullScreen
+              allow="fullscreen"
+            />
           </div>
         </div>
 
