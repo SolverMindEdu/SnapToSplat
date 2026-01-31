@@ -119,7 +119,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
                           <h4 className="text-xl font-bold text-gray-900">Day 3-7</h4>
                         </div>
                         <p className="text-gray-600">
-                          Rapid prototyping and development. Both teams worked in parallel on mechanical systems, electronics, and software integration.
+                          Rapid prototyping and development along with PID calibration and testing
                         </p>
                       </div>
                     </div>
@@ -135,7 +135,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
                           <Calendar className="w-5 h-5 text-emerald-600" />
                         </div>
                         <p className="text-gray-600">
-                          Testing, debugging, and refinement. Integration of both team's work and rigorous testing in real-world conditions.
+                          Continued testing, and finalization
                         </p>
                       </div>
                     </div>
@@ -159,7 +159,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
                           <h4 className="text-xl font-bold">Day 10</h4>
                         </div>
                         <p className="text-emerald-50">
-                          Final presentation and demonstration! Successfully completed a fully functional robot ready for field testing.
+                          Final presentation and demonstration! Successfully completed a fully functional alpha and beta bot!
                         </p>
                       </div>
                     </div>
