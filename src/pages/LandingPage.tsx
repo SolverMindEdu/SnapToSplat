@@ -191,7 +191,25 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
       {/* Footer */}
       <footer className="border-t border-amber-200 mt-20 bg-gradient-to-b from-white to-amber-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <div className="flex flex-col items-center justify-center gap-8 mb-8">
+            <div className="flex items-center justify-center gap-8 flex-wrap">
+              <img
+                src="/52736_solvers_of_x&y_logo.png"
+                alt="Solvers of X and Y Logo"
+                className="w-32 h-32 object-contain"
+              />
+              <img
+                src="/image.png"
+                alt="FIRST LEGO League Logo"
+                className="w-32 h-32 object-contain"
+              />
+            </div>
+            <p className="text-gray-600 text-lg font-medium text-center">
+              Made by Team 52777 Solvers of X & Y
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 pt-8 border-t border-amber-200">
             <p className="text-gray-600 text-sm">
               &copy; 2026 Snap to Splat. Digitally preserving archaeological heritage.
             </p>
