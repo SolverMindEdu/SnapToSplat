@@ -283,11 +283,10 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
                 <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-4 text-white">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="text-xl font-bold">Team Alpha</h4>
-                      <p className="text-blue-100 text-sm">Mechanical Systems & Structure</p>
+                      <h4 className="text-xl font-bold">Solversmind</h4>
                     </div>
                     <a
-                      href="https://www.canva.com/design/DAGw1r2Ykxw/rN3srxKaitR1dgW80Y1mTA/view"
+                      href="https://www.canva.com/design/DAGxNpFBbgs/Q7keAV9kze4vUdh055TSkQ/view"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-3 py-1.5 bg-white/20 hover:bg-white/30 rounded-lg transition-all"
@@ -298,7 +297,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
                 </div>
                 <div className="aspect-video w-full bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center p-6">
                   <a
-                    href="https://www.canva.com/design/DAGw1r2Ykxw/rN3srxKaitR1dgW80Y1mTA/view"
+                    href="https://www.canva.com/design/DAGxNpFBbgs/Q7keAV9kze4vUdh055TSkQ/view"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all hover:scale-105 transform"
@@ -312,8 +311,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
                 <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 p-4 text-white">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="text-xl font-bold">Team Beta</h4>
-                      <p className="text-violet-100 text-sm">Electronics & Software</p>
+                      <h4 className="text-xl font-bold">Solversmine</h4>
                     </div>
                     <a
                       href="https://www.canva.com/design/DAGxNpFBbgs/AzbzFfabDSSqGTKCF5VPFg/view"
