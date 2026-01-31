@@ -233,40 +233,6 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
             </div>
           </div>
 
-          <div className="mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Overall Robot Design
-            </h3>
-
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden hover:shadow-2xl transition-shadow max-w-4xl mx-auto">
-              <div className="bg-gradient-to-r from-orange-500 to-red-500 p-4 text-white">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h4 className="text-xl font-bold">Robot Design</h4>
-                  </div>
-                  <a
-                    href="https://www.canva.com/design/DAG-QPkhC4M/GBV6xcfoEsWCCcwjb7eTGA/view"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-3 py-1.5 bg-white/20 hover:bg-white/30 rounded-lg transition-all"
-                  >
-                    <span className="text-xs font-semibold">View</span>
-                  </a>
-                </div>
-              </div>
-              <div className="aspect-video w-full bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center p-6">
-                <a
-                  href="https://www.canva.com/design/DAG-QPkhC4M/GBV6xcfoEsWCCcwjb7eTGA/view"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all hover:scale-105 transform"
-                >
-                  <span>Open Presentation</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
           <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-10 text-center text-white hover:shadow-2xl transition-shadow">
             <h3 className="text-3xl font-bold mb-4">
               The Power of Collaboration
