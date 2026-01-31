@@ -60,7 +60,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
             </div>
           </div>
 
-          {/* Robot Design Section */}
+          {/* Design Documentation Section */}
           <div className="mb-12">
             <div className="bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl p-8 shadow-xl mb-6">
               <div className="flex items-center justify-between flex-wrap gap-4">
@@ -69,7 +69,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                     <Bot className="w-6 h-6 text-cyan-400" />
                   </div>
                   <div>
-                    <h3 className="text-3xl font-bold text-white">Robot Design</h3>
+                    <h3 className="text-3xl font-bold text-white">Design Documentation</h3>
                     <p className="text-slate-300 text-sm">Autonomous systems for comprehensive site documentation</p>
                   </div>
                 </div>
@@ -80,7 +80,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
               <iframe
                 loading="lazy"
                 style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
-                src="https://www.canva.com/design/DAG-QPkhC4M/view?embed"
+                src="https://www.canva.com/design/DAG-QPkhC4M/GBV6xcfoEsWCCcwjb7eTGA/view?embed"
                 allowFullScreen
                 allow="fullscreen"
               />
