@@ -25,7 +25,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold">Design Documentation</h2>
               <a
-                href="https://www.canva.com/design/DAG-QPkhC4M/NzFsxsb0nJNy-cNwtEEhoQ/view"
+                href="https://www.canva.com/design/DAG-QPkhC4M/GBV6xcfoEsWCCcwjb7eTGA/view?utm_content=DAG-QPkhC4M&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-all hover:scale-105 transform"
@@ -35,11 +35,11 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
               </a>
             </div>
           </div>
-          <div className="w-full bg-white overflow-hidden" style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+          <div className="w-full bg-white overflow-hidden" style={{ position: 'relative', width: '100%', height: 0, paddingTop: '56.25%', paddingBottom: 0, boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)', marginTop: '1.6em', marginBottom: '0.9em', borderRadius: '8px' }}>
             <iframe
               loading="lazy"
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
-              src="https://www.canva.com/design/DAG-QPkhC4M/view?embed"
+              style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0, border: 'none', padding: 0, margin: 0 }}
+              src="https://www.canva.com/design/DAG-QPkhC4M/GBV6xcfoEsWCCcwjb7eTGA/view?embed"
               allowFullScreen
               allow="fullscreen"
             />
@@ -242,7 +242,7 @@ export default function RobotDesignPage({ onNavigate }: RobotDesignPageProps) {
               <div className="bg-gradient-to-r from-orange-500 to-red-500 p-4 text-white">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="text-xl font-bold">Solvers of X and Y Robot Design</h4>
+                    <h4 className="text-xl font-bold">Robot Design</h4>
                   </div>
                   <a
                     href="https://www.canva.com/design/DAG-QPkhC4M/GBV6xcfoEsWCCcwjb7eTGA/view"
