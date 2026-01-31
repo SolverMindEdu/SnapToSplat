@@ -165,6 +165,15 @@ export default function InnovationCanvasPage({ onNavigate }: InnovationCanvasPag
             <ArrowRight className="w-5 h-5" />
           </button>
         </div>
+
+        <div className="mt-8 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-10 text-center text-white animate-fade-in-up animation-delay-1200 hover:shadow-2xl transition-shadow">
+          <h2 className="text-3xl font-bold mb-4">
+            From Innovation to Robot Game
+          </h2>
+          <p className="text-amber-50 text-lg">
+            Please check out our Robot Game -- Documentation & Videos.
+          </p>
+        </div>
       </div>
     </div>
   );
